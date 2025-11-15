@@ -1,0 +1,91 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Public API restfull tests",
+    "children" : [ {
+      "name" : "Objects resource",
+      "children" : [ {
+        "name" : "testGetObjects()",
+        "uid" : "8e8b7539ae540275",
+        "parentUid" : "e249e0df98a7fadaf8d1874a02a55f65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1763244514868,
+          "stop" : 1763244517203,
+          "duration" : 2335
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testCreateObject()",
+        "uid" : "16b1d33c767e4e7d",
+        "parentUid" : "e249e0df98a7fadaf8d1874a02a55f65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1763244517264,
+          "stop" : 1763244517990,
+          "duration" : 726
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testGetObjectById()",
+        "uid" : "6f135ae0f0e2bd30",
+        "parentUid" : "e249e0df98a7fadaf8d1874a02a55f65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1763244517993,
+          "stop" : 1763244518351,
+          "duration" : 358
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testUpdateObject()",
+        "uid" : "38f315bd62989e46",
+        "parentUid" : "e249e0df98a7fadaf8d1874a02a55f65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1763244518354,
+          "stop" : 1763244518654,
+          "duration" : 300
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testPatchObject()",
+        "uid" : "e0fe4bd309421cbc",
+        "parentUid" : "e249e0df98a7fadaf8d1874a02a55f65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1763244518657,
+          "stop" : 1763244518955,
+          "duration" : 298
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testDeleteObject()",
+        "uid" : "c0ec9c172d49835",
+        "parentUid" : "e249e0df98a7fadaf8d1874a02a55f65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1763244518957,
+          "stop" : 1763244519262,
+          "duration" : 305
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e249e0df98a7fadaf8d1874a02a55f65"
+    } ],
+    "uid" : "9e5b2baff7310d3c76ccb6c649aa7659"
+  } ]
+}

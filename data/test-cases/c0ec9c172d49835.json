@@ -1,0 +1,81 @@
+{
+  "uid" : "c0ec9c172d49835",
+  "name" : "testDeleteObject()",
+  "fullName" : "br.com.ju.api.ObjectApiTests.testDeleteObject",
+  "historyId" : "9b0f8da59da7a11f78d921203fa712c8",
+  "time" : {
+    "start" : 1763244518957,
+    "stop" : 1763244519262,
+    "duration" : 305
+  },
+  "description" : "Delete created object - should return 200/204/202",
+  "descriptionHtml" : "<p>Delete created object - should return 200/204/202</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Delete created object - should return 200/204/202",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7cbae6fc7fc46d63",
+      "name" : "Response DELETE /objects/{id}",
+      "source" : "7cbae6fc7fc46d63.txt",
+      "type" : "text/plain",
+      "size" : 81
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "Public API restfull tests"
+  }, {
+    "name" : "feature",
+    "value" : "Objects resource"
+  }, {
+    "name" : "host",
+    "value" : "runnervmg1sw1"
+  }, {
+    "name" : "thread",
+    "value" : "3003@runnervmg1sw1.main(3)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "br.com.ju.api.ObjectApiTests"
+  }, {
+    "name" : "testClass",
+    "value" : "br.com.ju.api.ObjectApiTests"
+  }, {
+    "name" : "testMethod",
+    "value" : "testDeleteObject"
+  }, {
+    "name" : "suite",
+    "value" : "br.com.ju.api.ObjectApiTests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c0ec9c172d49835.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,81 @@
+{
+  "uid" : "38f315bd62989e46",
+  "name" : "testUpdateObject()",
+  "fullName" : "br.com.ju.api.ObjectApiTests.testUpdateObject",
+  "historyId" : "a085b8b8af03fdd58af38980c099a6e5",
+  "time" : {
+    "start" : 1763244518354,
+    "stop" : 1763244518654,
+    "duration" : 300
+  },
+  "description" : "Update object with PUT - should return 200 and updated fields",
+  "descriptionHtml" : "<p>Update object with PUT - should return 200 and updated fields</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Update object with PUT - should return 200 and updated fields",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c86f8b327eface78",
+      "name" : "Response PUT /objects/{id}",
+      "source" : "c86f8b327eface78.txt",
+      "type" : "text/plain",
+      "size" : 166
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Objects resource"
+  }, {
+    "name" : "epic",
+    "value" : "Public API restfull tests"
+  }, {
+    "name" : "host",
+    "value" : "runnervmg1sw1"
+  }, {
+    "name" : "thread",
+    "value" : "3003@runnervmg1sw1.main(3)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "br.com.ju.api.ObjectApiTests"
+  }, {
+    "name" : "testClass",
+    "value" : "br.com.ju.api.ObjectApiTests"
+  }, {
+    "name" : "testMethod",
+    "value" : "testUpdateObject"
+  }, {
+    "name" : "suite",
+    "value" : "br.com.ju.api.ObjectApiTests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "38f315bd62989e46.json",
+  "parameterValues" : [ ]
+}

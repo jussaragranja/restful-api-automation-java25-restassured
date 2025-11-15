@@ -1,0 +1,61 @@
+[ {
+  "uid" : "16b1d33c767e4e7d",
+  "name" : "testCreateObject()",
+  "time" : {
+    "start" : 1763244517264,
+    "stop" : 1763244517990,
+    "duration" : 726
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e0fe4bd309421cbc",
+  "name" : "testPatchObject()",
+  "time" : {
+    "start" : 1763244518657,
+    "stop" : 1763244518955,
+    "duration" : 298
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c0ec9c172d49835",
+  "name" : "testDeleteObject()",
+  "time" : {
+    "start" : 1763244518957,
+    "stop" : 1763244519262,
+    "duration" : 305
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "38f315bd62989e46",
+  "name" : "testUpdateObject()",
+  "time" : {
+    "start" : 1763244518354,
+    "stop" : 1763244518654,
+    "duration" : 300
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8e8b7539ae540275",
+  "name" : "testGetObjects()",
+  "time" : {
+    "start" : 1763244514868,
+    "stop" : 1763244517203,
+    "duration" : 2335
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6f135ae0f0e2bd30",
+  "name" : "testGetObjectById()",
+  "time" : {
+    "start" : 1763244517993,
+    "stop" : 1763244518351,
+    "duration" : 358
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

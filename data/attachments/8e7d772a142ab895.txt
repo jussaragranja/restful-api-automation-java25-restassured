@@ -1,0 +1,1 @@
+{"id":"ff8081819782e69e019a899028907005","name":"Automated Test Device (Patched)","updatedAt":"2025-11-15T22:08:38.838+00:00","data":{"color":"silver","price":1099.99}}
