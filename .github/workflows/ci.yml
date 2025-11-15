@@ -1,0 +1,52 @@
+name: CI - API tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 25
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '25'
+
+    - name: Cache Maven local repository
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+
+    - name: Build and run tests
+      run: mvn -B -V clean test -DskipITs=true
+
+    - name: Archive Allure results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: allure-results
+        path: target/allure-results
+
+    - name: Generate Allure report (optional)
+      if: success()
+      run: |
+        mvn allure:report
+        zip -r allure-report.zip target/site/allure-maven-plugin || true
+
+    - name: Upload Allure report
+      if: success()
+      uses: actions/upload-artifact@v4
+      with:
+        name: allure-report
+        path: allure-report.zip
