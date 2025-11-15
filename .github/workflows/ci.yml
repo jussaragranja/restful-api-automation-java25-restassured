@@ -60,33 +60,60 @@ jobs:
           name: allure-report
           path: ./artifact
 
-      - name: Extract ZIP artifact
+      - name: Inspect downloaded artifact (debug)
         run: |
-          echo "Extracting allure-report.zip..."
-          mkdir -p ./allure-site
-          unzip ./artifact/allure-report.zip -d ./allure-site
-          echo "Files extracted:"
-          find ./allure-site -maxdepth 3 -type f | sed -n '1,200p'
+          echo ">>> Listing artifact root:"
+          ls -la ./artifact || true
+          echo ">>> Listing recursively (max depth 4):"
+          find ./artifact -maxdepth 4 -type f -printf "%P\n" || true
 
-      - name: Ensure index.html is at root
+      - name: Prepare publish dir from artifact (robust)
         run: |
-          # Case 1: report extracted inside a nested path
-          if [ -f "./allure-site/target/site/allure-maven-plugin/index.html" ]; then
-            echo "Moving nested report to root..."
-            rm -rf ./publish || true
-            mkdir publish
-            cp -r ./allure-site/target/site/allure-maven-plugin/* ./publish/
-          # Case 2: Files are already at root
-          elif [ -f "./allure-site/index.html" ]; then
-            echo "Report is already at root."
-            mv ./allure-site ./publish
+          set -euo pipefail
+          echo "Preparing publish directory..."
+
+          # Clean previous dirs
+          rm -rf ./allure-site ./publish
+          mkdir -p ./allure-site ./publish
+
+          # 1) If there's a zip file inside artifact, extract the first one found
+          ZIPFILE=$(find ./artifact -type f -iname '*.zip' | head -n 1 || true)
+          if [ -n "$ZIPFILE" ]; then
+            echo "Found ZIP: $ZIPFILE"
+            unzip -o "$ZIPFILE" -d ./allure-site
           else
-            echo "ERROR: index.html not found after extraction!"
-            exit 1
+            echo "No zip found. Copying files into ./allure-site"
+            # copy everything (handles case where action already extracted the zip)
+            cp -r ./artifact/* ./allure-site/ || true
           fi
 
-          echo "Publish folder created:"
-          find ./publish -maxdepth 3 -type f | sed -n '1,200p'
+          echo "After extraction/copy, listing ./allure-site:"
+          find ./allure-site -maxdepth 4 -type f -printf "%P\n" || true
+
+          # 2) Locate index.html or nested Allure report folder
+          if [ -f "./allure-site/index.html" ]; then
+            echo "Found index.html at ./allure-site/index.html — moving to publish/"
+            cp -r ./allure-site/* ./publish/
+          elif [ -f "./allure-site/target/site/allure-maven-plugin/index.html" ]; then
+            echo "Found nested report in target/site/allure-maven-plugin — copying to publish/"
+            cp -r ./allure-site/target/site/allure-maven-plugin/* ./publish/
+          else
+            # try to find any index.html anywhere and copy its parent dir contents
+            INDEX_PATH=$(find ./allure-site -type f -iname 'index.html' | head -n 1 || true)
+            if [ -n "$INDEX_PATH" ]; then
+              echo "Found index at: $INDEX_PATH"
+              PARENT_DIR=$(dirname "$INDEX_PATH")
+              echo "Copying files from $PARENT_DIR to ./publish/"
+              cp -r "$PARENT_DIR"/* ./publish/
+            else
+              echo "ERROR: no index.html found after extraction. Listing ./allure-site for debugging:"
+              find ./allure-site -maxdepth 6 -type f -printf "%P\n" || true
+              exit 1
+            fi
+          fi
+
+          echo "Publish directory prepared. Sample files:"
+          ls -la ./publish | sed -n '1,200p' || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
