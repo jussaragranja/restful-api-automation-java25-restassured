@@ -1,0 +1,4 @@
+api:
+  baseUri: "https://api.restful-api.dev"
+  endpoints:
+    objects: "/objects"
