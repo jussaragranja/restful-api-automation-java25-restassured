@@ -1,0 +1,134 @@
+<h1 align="center">restful-api-automation-java25-restassured</h1>
+<p align="center">
+    <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
+    <a href="https://restful-api.dev/" target="_blank">
+        <img alt="API" src="https://img.shields.io/badge/API-RestFull-blueviolet.svg" /> </a>
+        <img alt="Build" src="https://github.com/jussaragranja/restful-api-automation-java25-restassured/actions/workflows/ci.yml/badge.svg" />
+        <img alt="Allure Report" src="https://img.shields.io/badge/Allure-Report-orange.svg" /> </p> <p align="center">
+    <b>Automated API testing project using Java 25, Maven, RestAssured, and JUnit5 for the
+    <a href="https://restful-api.dev/">Restful Public API</a>.</b> </p>
+
+# RESTful API Automation – Java 25, RestAssured, JUnit5, Allure
+
+This project demonstrates a complete API test automation suite for the public API https://restful-api.dev/,
+using:
+
+- Java 25
+- RestAssured
+- JUnit 5
+- Lombok
+- Allure Reports
+- GitHub Actions (CI pipeline)
+
+---------------------------------------------------------------------
+
+### 📁 PROJECT STRUCTURE
+```
+restful-api-automation-java25-restassured/
+├─ pom.xml
+├─ README.md
+├─ src/main/resources/application.yml
+├─ src/main/java/br/com/ju/api/model/ApiObject.java
+├─ src/main/java/br/com/ju/api/client/ObjectClient.java
+├─ src/test/java/br/com/ju/api/BaseTest.java
+├─ src/test/java/br/com/ju/api/ObjectApiTests.java
+└─ .github/workflows/ci.yml
+```
+
+---------------------------------------------------------------------
+
+### 🚀 FEATURES AUTOMATED
+
+The automation suite covers all core endpoints of the API:
+
+#### GET /objects
+```
+→ Returns a list of objects.
+```
+#### GET /objects/{id}  
+```
+→ Fetches a specific object.
+```
+#### POST /objects  
+```
+→ Creates a new object.
+```
+#### PUT /objects/{id}  
+```
+→ Fully updates an object.
+```
+
+#### PATCH /objects/{id}  
+```
+→ Partially updates an object.
+```
+#### DELETE /objects/{id}  
+```
+→ Deletes an object created during the test flow.
+```
+---------------------------------------------------------------------
+
+### 🧪 HOW TO RUN THE TESTS
+
+🛠 Prerequisites:
+- Java 25+
+- Maven 3.8+
+
+#### ▶️ Run the tests:
+```bash
+mvn clean test
+```
+
+▶️ Override API Base URL (without modifying files):
+```bash
+mvn test -Dapi.baseUri=https://api.restful-api.dev
+```
+
+---------------------------------------------------------------------
+
+### 📊 ALLURE REPORTS
+
+Generate Allure report:
+```bash
+mvn allure:report
+```
+Open the report:
+```
+target/site/allure-maven-plugin/index.html
+```
+---------------------------------------------------------------------
+
+### ☁️ GITHUB ACTIONS (CI PIPELINE)
+
+The pipeline runs automatically on:
+- pushes
+- pull requests
+
+It performs:
+- project build
+- test execution
+- uploads Allure results as artifacts
+
+Workflow file:
+.github/workflows/ci.yml
+
+---------------------------------------------------------------------
+
+### 🧩 DESIGN PATTERNS USED
+
+- **Client Pattern** to organize API interactions
+- **br.com.ju.api.BaseTest** centralized setup configuration
+- **Test Method Ordering** 
+- **Lombok** to reduce boilerplate
+- **Allure** for structured and rich reporting
+- Clean, scalable architecture suitable for QA and DevOps teams
+
+---------------------------------------------------------------------
+
+## AUTHOR
+
+👤 **Jussara Granja**
+
+* LinkedIn: [@jussaragranja](https://linkedin.com/in/jussaragranja)
+* Github: [@jussaragranja](https://github.com/jussaragranja)
+* GitLab: [@jussaragranja](https://gitlab.com/jussaragranja)
