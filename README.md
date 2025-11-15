@@ -125,9 +125,8 @@ Workflow file:
 
 ---------------------------------------------------------------------
 
-### AUTHOR
-
-👤 **Jussara Granja**
+### 👤 AUTHOR
+### 👩🏾‍💻 Jussara Granja
 
 * LinkedIn: [@jussaragranja](https://linkedin.com/in/jussaragranja)
 * Github: [@jussaragranja](https://github.com/jussaragranja)
