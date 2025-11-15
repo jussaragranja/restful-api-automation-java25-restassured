@@ -15,7 +15,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Epic("Public API tests")
+@Epic("Public API restfull tests")
 @Feature("Objects resource")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ObjectApiTests extends BaseTest {
